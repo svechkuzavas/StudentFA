@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="MaterialInputPrimary" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="o">20dp</item>
+        <item name="boxBackgroundColor">@color/input_bg</item>
+        <item name="boxCornerRadiusBottomEnd">25dp</item>
+        <item name="boxCornerRadiusBottomStart">25dp</item>
+        <item name="boxCornerRadiusTopEnd">25dp</item>
+        <item name="boxCornerRadiusTopStart">25dp</item>
+        <item name="hintTextAppearance">@style/HintTextAppearance</item>
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="hintTextColor">@color/black</item>
+    </style>
+
+    <style name="IconButtonPrimary" parent="Widget.MaterialComponents.Button.Icon">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="shapeAppearanceOverlay">@style/MyShapeAppearance</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="o">@dimen/button_margin</item>
+    </style>
+
+    <style name="MyShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">25dp</item>
+        <item name="cornerSizeBottomRight">25dp</item>
+        <item name="cornerSizeTopLeft">25dp</item>
+        <item name="cornerSizeBottomLeft">25dp</item>
+    </style>
+
+    <style name="IconButtonContinue" parent="IconButtonPrimary">
+        <item name="icon">@drawable/ic_arrow_right_thin</item>
+        <item name="iconGravity">end</item>
+        <item name="android:backgroundTint">@color/input_bg</item>
+        <item name="android:textColor">@color/green_fa</item>
+        <item name="iconTint">@color/green_fa</item>
+    </style>
+
+    <style name="HintTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+    <dimen name="button_margin">20dp</dimen>
+</resources>
