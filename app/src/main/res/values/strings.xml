@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">StudentFU</string>
+    <string name="hint_username">Имя пользователя</string>
+    <string name="hint_password">Пароль</string>
+    <string name="hint_password_conf">Повторите пароль</string>
+    <string name="hint_email">E-mail</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="login">Войти</string>
+
+    <string name="goto_login"><u>Уже с нами? Залогинься!</u></string>
+    <string name="goto_register"><u>Зарегистрироваться</u></string>
 </resources>
