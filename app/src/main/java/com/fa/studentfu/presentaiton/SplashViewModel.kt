@@ -6,8 +6,4 @@ import androidx.lifecycle.ViewModel
 
 class SplashViewModel : ViewModel() {
 
-    private val _status = MutableLiveData<SplashUiState>(SplashUiState.INITIAL)
-    val status : LiveData<SplashUiState> = _status
-
-
 }

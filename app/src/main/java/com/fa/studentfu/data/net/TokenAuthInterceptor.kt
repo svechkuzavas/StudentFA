@@ -1,10 +1,10 @@
 package com.fa.studentfu.data.net
 
-import com.fa.studentfu.core.data.ResourceManager
+import com.fa.studentfu.core.data.Resource
 import okhttp3.Interceptor
 import okhttp3.Response
 
-class TokenAuthInterceptor(private val tokenManager : ResourceManager.TokenManager) : Interceptor {
+class TokenAuthInterceptor(private val tokenManager : Resource.TokenManager) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response = chain.run{
         proceed(
             request()

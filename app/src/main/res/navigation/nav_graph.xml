@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/testFragment">
 
     <fragment
         android:id="@+id/registrationFragment"
@@ -30,4 +30,8 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.fa.studentfu.presentaiton.TestFragment"
+        android:label="TestFragment" />
 </navigation>
