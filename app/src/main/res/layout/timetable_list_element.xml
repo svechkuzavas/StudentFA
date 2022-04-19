@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/rounded_shape"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="10dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timetable_guide_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="30dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timetable_guide_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timetable_guide_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="30dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/timetable_guide_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="16dp"/>
+
+    <TextView
+        android:id="@+id/timetable_lecture"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/timetable_guide_top"
+        app:layout_constraintStart_toStartOf="@id/timetable_guide_left"
+        app:layout_constraintEnd_toEndOf="@id/timetable_guide_right"
+        tools:text="Название дисциплины"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="28sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/timetable_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/timetable_lecture"
+        app:layout_constraintStart_toStartOf="@id/timetable_guide_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Семинар"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/timetable_groups"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/timetable_type"
+        app:layout_constraintStart_toStartOf="@id/timetable_guide_left"
+        app:layout_constraintEnd_toEndOf="@id/timetable_guide_right"
+        tools:text="Список групп"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/timetable_lecturer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/timetable_groups"
+        app:layout_constraintStart_toStartOf="@id/timetable_guide_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Преподаватель"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:drawableStartCompat="@drawable/ic_account"
+        android:drawablePadding="10dp"/>
+
+    <TextView
+        android:id="@+id/timetable_building"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/timetable_lecturer"
+        app:layout_constraintBottom_toBottomOf="@+id/timetable_guide_bottom"
+        app:layout_constraintStart_toStartOf="@id/timetable_guide_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Корпус"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:drawableStartCompat="@drawable/ic_home_city"
+        android:drawablePadding="10dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

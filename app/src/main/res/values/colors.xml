@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green_fa">#E11F6366</color>
     <color name="input_bg">#D8D8D8</color>
+    <color name="bg_primary">#FBEFE2</color>
 </resources>

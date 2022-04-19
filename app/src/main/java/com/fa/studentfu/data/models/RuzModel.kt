@@ -21,3 +21,12 @@ sealed class RuzModel {
         @SerializedName("url1_description") val urlDescription : String,
     ) : RuzModel()
 }
+
+/*
+class Article(models.Model):
+    author = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to=f'media/post_images')
+    header = models.CharField(max_length=64)
+    description = models.CharField(max_length=512)
+    created_on = models.DateTimeField(auto_now_add=True)
+ */

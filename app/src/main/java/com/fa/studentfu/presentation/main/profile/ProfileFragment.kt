@@ -1,15 +1,15 @@
-package com.fa.studentfu.presentaiton
+package com.fa.studentfu.presentation.main.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.fa.studentfu.databinding.SplashFragmentBinding
+import com.fa.studentfu.databinding.ProfileFragmentBinding
 
-class SplashFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
-    private var _binding : SplashFragmentBinding? = null
+    private var _binding : ProfileFragmentBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class SplashFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = SplashFragmentBinding.inflate(inflater, container, false)
+        _binding = ProfileFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 

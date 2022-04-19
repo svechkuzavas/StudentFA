@@ -1,16 +1,15 @@
-package com.fa.studentfu.presentaiton
+package com.fa.studentfu.presentation.sign.splash
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.fa.studentfu.databinding.RegistrationFragmentBinding
-import android.view.View as View
+import com.fa.studentfu.databinding.SplashFragmentBinding
 
-class RegistrationFragment: Fragment() {
+class SplashFragment : Fragment() {
 
-    private var _binding : RegistrationFragmentBinding? = null
+    private var _binding : SplashFragmentBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,14 +21,11 @@ class RegistrationFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = RegistrationFragmentBinding.inflate(inflater, container, false)
+        _binding = SplashFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.registrationSwitch.setOnClickListener{
-            findNavController().navigate(RegistrationFragmentDirections.actionRegisterLogin())
-        }
     }
 }

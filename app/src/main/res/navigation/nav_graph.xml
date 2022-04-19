@@ -2,36 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/testFragment">
+    android:id="@+id/nav_graph">
+
+    <action
+        android:id="@+id/action_global_signFlowFragment"
+        app:destination="@id/signFlowFragment"
+        app:popUpTo="@id/nav_graph" />
+
+    <action
+        android:id="@+id/action_global_mainFlowFragment"
+        app:destination="@id/mainFlowFragment"
+        app:popUpTo="@id/nav_graph" />
 
     <fragment
-        android:id="@+id/registrationFragment"
-        android:name="com.fa.studentfu.presentaiton.RegistrationFragment"
-        android:label="RegistrationFragment"
-        tools:layout="@layout/registration_fragment">
-        <action
-            android:id="@+id/action_register_login"
-            app:destination="@id/loginFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-    </fragment>
+        android:id="@+id/mainFlowFragment"
+        android:name="com.fa.studentfu.presentation.main.MainFlowFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/news_fragment"/>
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.fa.studentfu.presentaiton.LoginFragment"
-        android:label="LoginFragment" >
-        <action
-            android:id="@+id/action_login_register"
-            app:destination="@id/registrationFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-    </fragment>
-    <fragment
-        android:id="@+id/testFragment"
-        android:name="com.fa.studentfu.presentaiton.TestFragment"
-        android:label="TestFragment" />
+        android:id="@+id/signFlowFragment"
+        android:name="com.fa.studentfu.presentation.sign.SignFlowFragment"
+        android:label="SignFlowFragment"
+        tools:layout="@layout/registration_fragment"/>
 </navigation>

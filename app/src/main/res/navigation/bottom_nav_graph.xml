@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_graph"
+    app:startDestination="@id/navigation_news">
+
+    <fragment
+        android:id="@+id/navigation_news"
+        android:name="com.fa.studentfu.presentation.main.news.NewsFragment"
+        android:label="News Fragment"
+        tools:layout="@layout/news_fragment" >
+        <action
+            android:id="@+id/action_navigation_news_to_navigation_timetable"
+            app:destination="@id/navigation_timetable" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_timetable"
+        android:name="com.fa.studentfu.presentation.main.timetable.TimetableFragment"
+        android:label="Timetable Fragment"
+        tools:layout="@layout/timetable_fragment">
+        <action
+            android:id="@+id/action_navigation_timetable_to_navigation_reference"
+            app:destination="@id/navigation_reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_reference"
+        android:name="com.fa.studentfu.presentation.main.reference.ReferenceFragment"
+        android:label="Reference Fragment"
+        tools:layout="@layout/references_fragment">
+        <action
+            android:id="@+id/action_navigation_reference_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.fa.studentfu.presentation.main.profile.ProfileFragment"
+        android:label="Profile Fragment"
+        tools:layout="@layout/profile_fragment"/>
+
+</navigation>

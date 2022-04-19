@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_news"
+        android:title="@string/bottom_nav_news"
+        android:icon="@drawable/ic_newspaper"/>
+    <item android:id="@+id/menu_timetable"
+        android:title="@string/bottom_nav_timetable"
+        android:icon="@drawable/ic_timetable"/>
+    <item android:id="@+id/menu_reference"
+        android:title="@string/bottom_nav_reference"
+        android:icon="@drawable/ic_file_document_edit_outline"/>
+    <item android:id="@+id/menu_profile"
+        android:title="@string/bottom_nav_profile"
+        android:icon="@drawable/ic_account"/>
+</menu>

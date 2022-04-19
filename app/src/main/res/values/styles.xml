@@ -43,4 +43,7 @@
         <item name="android:textStyle">bold|italic</item>
     </style>
     <dimen name="button_margin">20dp</dimen>
+
+    <style name="ProfileTextView">
+    </style>
 </resources>

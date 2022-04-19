@@ -10,4 +10,8 @@
     <string name="goto_login"><u>Уже с нами? Залогинься!</u></string>
     <string name="goto_register"><u>Зарегистрироваться</u></string>
     <string name="descr_logo_image">Логотип Финансового Университета</string>
+    <string name="bottom_nav_news">Новости</string>
+    <string name="bottom_nav_timetable">Расписание</string>
+    <string name="bottom_nav_reference">Справки</string>
+    <string name="bottom_nav_profile">Профиль</string>
 </resources>
