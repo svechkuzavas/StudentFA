@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.fa.studentfu.core.data.Resource
 
-class SharedPrefDataSource(context : Context) : Resource.TokenManager {
+class SharedPrefTokenStorage(context : Context) : Resource.TokenManager {
 
     private val sharedPreference : SharedPreferences = context.getSharedPreferences(STORAGE_NAME, Context.MODE_PRIVATE)
 
@@ -24,11 +24,15 @@ class SharedPrefDataSource(context : Context) : Resource.TokenManager {
         sharedPreference.edit().putString(TOKEN_KEY, token).apply()
     }
 
+    override fun clearToken() {
+        sharedPreference.edit().remove(TOKEN_KEY).apply()
+    }
+
     companion object {
         const val STORAGE_NAME = "STORAGE_TOKEN"
         const val TOKEN_KEY = "TOKEN"
         const val HEADER_KEY = "HEADER"
-        const val HEADER_DEFAULT_VALUE = ""
-        const val TOKEN_DEFAULT_VALUE = "Authorization"
+        const val HEADER_DEFAULT_VALUE = "Authorization"
+        const val TOKEN_DEFAULT_VALUE = ""
     }
 }

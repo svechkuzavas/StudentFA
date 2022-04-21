@@ -19,4 +19,8 @@ class TokenRepositoryImpl(private val dataSource: Resource.TokenManager) : Token
     override fun saveHeader(header: String) {
         dataSource.saveHeader(header)
     }
+
+    override fun clearToken() {
+        dataSource.clearToken()
+    }
 }

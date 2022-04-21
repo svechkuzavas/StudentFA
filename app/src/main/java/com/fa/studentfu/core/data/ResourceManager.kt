@@ -10,5 +10,6 @@ interface Resource {
         fun getToken() : String
         fun saveHeader(header : String)
         fun saveToken(token: String)
+        fun clearToken()
     }
 }

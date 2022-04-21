@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="MaterialInputPrimary" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginHorizontal" tools:targetApi="o">20dp</item>
         <item name="boxBackgroundColor">@color/input_bg</item>
@@ -15,9 +15,9 @@
     </style>
 
     <style name="IconButtonPrimary" parent="Widget.MaterialComponents.Button.Icon">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="shapeAppearanceOverlay">@style/MyShapeAppearance</item>
         <item name="android:layout_marginHorizontal" tools:targetApi="o">@dimen/button_margin</item>
     </style>

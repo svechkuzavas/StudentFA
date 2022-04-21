@@ -2,9 +2,8 @@ package com.fa.studentfu.data.net
 
 import com.fa.studentfu.core.data.BaseResult
 import com.fa.studentfu.core.data.Failure
-import com.fa.studentfu.core.data.NoInternetConnectionException
+import com.fa.studentfu.core.data.NoInternetException
 import com.fa.studentfu.data.RuzApi
-import com.fa.studentfu.data.models.RuzModel
 import com.fa.studentfu.domain.models.GroupSearchModel
 import java.lang.Exception
 
@@ -26,7 +25,7 @@ class RuzDataSource(private val ruzApi : RuzApi) {
             } else {
                 BaseResult.Error(Failure(response.code(), response.message()))
             }
-        } catch (e : NoInternetConnectionException){
+        } catch (e : NoInternetException){
             return BaseResult.Error(Failure(0, e.message))
         } catch (e : Exception){
             return BaseResult.Error(Failure(1, e.message.toString()))

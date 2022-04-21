@@ -1,31 +1,35 @@
 package com.fa.studentfu.presentation.main.profile
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.fa.studentfu.R
+import com.fa.studentfu.core.ui.BaseFragment
 import com.fa.studentfu.databinding.ProfileFragmentBinding
+import com.fa.studentfu.presentation.extension.activityNavController
+import com.fa.studentfu.presentation.extension.navigateSafely
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : BaseFragment<ProfileFragmentBinding>(ProfileFragmentBinding::inflate) {
 
-    private var _binding : ProfileFragmentBinding? = null
-    private val binding get() = _binding!!
+    private val viewModel by viewModel<ProfileViewModel>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun initializeViews() {
+        super.initializeViews()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = ProfileFragmentBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun setupListeners() {
+        super.setupListeners()
+        binding.profileLogout?.setOnClickListener {
+            viewModel.logout()
+        }
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun observe() {
+        super.observe()
+        viewModel.state.observe(viewLifecycleOwner){ state ->
+            when (state) {
+                is ProfileViewModel.UiState.LogOut -> {
+                    activityNavController().navigateSafely(R.id.action_global_signFlowFragment)
+                }
+            }
+        }
     }
 }

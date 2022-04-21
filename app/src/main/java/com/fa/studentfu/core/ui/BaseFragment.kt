@@ -29,6 +29,7 @@ abstract class BaseFragment<T : ViewBinding>(
         super.onViewCreated(view, savedInstanceState)
         initializeViews()
         setupListeners()
+        observe()
     }
 
     override fun onDestroyView() {
@@ -39,4 +40,6 @@ abstract class BaseFragment<T : ViewBinding>(
     protected open fun initializeViews(){}
 
     protected open fun setupListeners(){}
+
+    protected open fun observe(){}
 }

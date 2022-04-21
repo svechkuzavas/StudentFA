@@ -14,4 +14,5 @@
     <string name="bottom_nav_timetable">Расписание</string>
     <string name="bottom_nav_reference">Справки</string>
     <string name="bottom_nav_profile">Профиль</string>
+    <string name="profile_logout">Выйти</string>
 </resources>

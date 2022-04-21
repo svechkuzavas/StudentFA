@@ -21,52 +21,33 @@
             app:constraint_referenced_ids="reg_password_conf, reg_email"
             android:visibility="visible"/>
 
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/loading_disable"
-            android:layout_height="0dp"
-            android:layout_width="0dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:constraint_referenced_ids="reg_password_conf, reg_email,reg_username,reg_password,register,registration_switch"
-            android:visibility="gone"/>
-
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/section_login"
-            android:layout_height="0dp"
-            android:layout_width="0dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:constraint_referenced_ids="reg_username, reg_password, register, registration_switch" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_half"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="200dp"/>
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="300dp"
+            android:layout_width="180dp"
             android:layout_height="120dp"
             android:scaleX="2"
             android:scaleY="2"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/reg_username"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:src="@drawable/falogo_small_white"
             android:contentDescription="@string/descr_logo_image" />
-
-        <ProgressBar
-            android:id="@+id/loading_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registration_switch"
-            android:indeterminateTint="@color/white"
-            android:visibility="gone"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/reg_username"
             style="@style/MaterialInputPrimary"
             android:hint="@string/hint_username"
             app:startIconDrawable="@drawable/ic_account"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/reg_password"
-            app:layout_constraintRight_toRightOf="parent">
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/guide_half"
+            app:layout_constraintBottom_toTopOf="@+id/reg_password">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -79,7 +60,7 @@
             app:endIconMode="password_toggle"
             app:startIconDrawable="@drawable/ic_account_key"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/guide_half"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
             <com.google.android.material.textfield.TextInputEditText
@@ -93,7 +74,7 @@
             style="@style/MaterialInputPrimary"
             android:hint="@string/hint_password_conf"
             app:endIconMode="password_toggle"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/guide_half"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/reg_password">
             <com.google.android.material.textfield.TextInputEditText
@@ -107,7 +88,7 @@
             style="@style/MaterialInputPrimary"
             android:hint="@string/hint_email"
             app:startIconDrawable="@drawable/ic_at"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/guide_half"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/reg_password_conf">
             <com.google.android.material.textfield.TextInputEditText
@@ -118,12 +99,14 @@
 
         <Button
             android:id="@+id/register"
-            android:layout_width="match_parent"
             style="@style/IconButtonContinue"
+            android:maxWidth="200dp"
             android:text="@string/register"
-            app:layout_constraintTop_toBottomOf="@+id/reg_email"
+            app:layout_constraintTop_toBottomOf="@+id/logo"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintRight_toLeftOf="@id/guide_half"/>
 
         <TextView
             android:id="@+id/registration_switch"
@@ -133,10 +116,13 @@
             android:layout_marginTop="10dp"
             android:layout_gravity="end"
             android:textSize="18sp"
+            android:maxWidth="180dp"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:text="@string/goto_login"
             android:textColor="@color/input_bg"
             app:layout_constraintTop_toBottomOf="@+id/register"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="@id/guide_half"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

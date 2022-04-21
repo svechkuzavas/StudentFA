@@ -1,31 +1,45 @@
 package com.fa.studentfu.presentation.sign.splash
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.fa.studentfu.R
+import com.fa.studentfu.core.ui.BaseFragment
 import com.fa.studentfu.databinding.SplashFragmentBinding
+import com.fa.studentfu.presentation.extension.activityNavController
+import com.fa.studentfu.presentation.extension.navigateSafely
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SplashFragment : Fragment() {
+class SplashFragment : BaseFragment<SplashFragmentBinding>(SplashFragmentBinding::inflate) {
 
-    private var _binding : SplashFragmentBinding? = null
-    private val binding get() = _binding!!
+    private val viewModel by viewModel<SplashViewModel>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun initializeViews() {
+        super.initializeViews()
+        viewModel.preloadApplication()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = SplashFragmentBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun setupListeners() {
+        super.setupListeners()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun observe() {
+        super.observe()
+        viewModel.state.observe(viewLifecycleOwner){
+            state ->
+            when (state){
+                is SplashViewModel.UiState.Loading -> {
+
+                }
+                is SplashViewModel.UiState.ResultAvailable -> {
+                    handleAuthority(state.isAuthorizeed)
+                }
+            }
+        }
+    }
+
+    private fun handleAuthority(isAuthorized : Boolean) {
+        if (isAuthorized) {
+            activityNavController().navigateSafely(R.id.action_global_mainFlowFragment)
+        } else {
+            activityNavController().navigateSafely(R.id.action_global_signFlowFragment)
+        }
     }
 }

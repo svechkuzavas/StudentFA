@@ -1,4 +1,4 @@
-package com.fa.studentfu.data.net
+package com.fa.studentfu.core.interceptors
 
 import com.fa.studentfu.core.data.Resource
 import okhttp3.Interceptor

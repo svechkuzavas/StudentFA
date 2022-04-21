@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
-        navGraph.setStartDestination(R.id.signFlowFragment)
+        navGraph.setStartDestination(R.id.splashFragment)
         navController.graph = navGraph
     }
 
