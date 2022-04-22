@@ -6,7 +6,8 @@ import org.koin.dsl.module
 val domainModule = module {
     factory { GetGroupVariantsUseCase(get()) }
     factory { LoginUserUseCase(get()) }
-    factory { SaveTokenUseCase(get()) }
+    factory { SaveUserDataUseCase(get()) }
     factory { LogoutUserUseCase(get()) }
     factory { CheckUserAuthorizedUseCase(get()) }
+    factory { GetProfileDataUseCase(get(), get())}
 }

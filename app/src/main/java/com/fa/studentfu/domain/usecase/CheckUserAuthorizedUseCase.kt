@@ -1,14 +1,13 @@
 package com.fa.studentfu.domain.usecase
 
-import android.util.Log
-import com.fa.studentfu.core.data.Resource
+import com.fa.studentfu.domain.repo.UserDataRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class CheckUserAuthorizedUseCase(private val tokenManager: Resource.TokenManager) {
+class CheckUserAuthorizedUseCase(private val userDataRepository: UserDataRepository) {
     operator fun invoke() : Flow<Boolean> {
         return flow {
-            val result = tokenManager.getToken().isNotEmpty()
+            val result = userDataRepository.getToken().isNotEmpty()
             emit(result)
         }
     }

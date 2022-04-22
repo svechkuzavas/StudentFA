@@ -27,7 +27,7 @@ class LoginFragment :
     }
 
     override fun observe() {
-        viewModel.state.observe(this){ state ->
+        viewModel.state.observe(viewLifecycleOwner){ state ->
             setLoadingState(false)
             when (state) {
                 is LoginViewModel.UiState.Input -> {
@@ -40,7 +40,7 @@ class LoginFragment :
                     if (state.result is LoginViewModel.LoginResult.Error){
                         showSnackBar(state.result.message, binding.root)
                     } else{
-                        viewModel.saveToken()
+                        viewModel.saveUserData()
                         activityNavController().navigateSafely(R.id.action_global_mainFlowFragment)
                     }
                 }

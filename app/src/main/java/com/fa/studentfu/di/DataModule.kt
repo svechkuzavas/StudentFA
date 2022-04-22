@@ -9,13 +9,14 @@ import com.fa.studentfu.data.StudentApi
 import com.fa.studentfu.data.net.*
 import com.fa.studentfu.data.repo.RuzRepositoryImpl
 import com.fa.studentfu.data.repo.StudentRepositoryImpl
+import com.fa.studentfu.data.repo.UserDataRepositoryImpl
 import com.fa.studentfu.data.sharedPref.SharedPrefTokenStorage
 import com.fa.studentfu.domain.repo.RuzRepository
 import com.fa.studentfu.domain.repo.StudentRepository
+import com.fa.studentfu.domain.repo.UserDataRepository
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
-import kotlin.math.log
 
 val dataModule = module {
     factory<BaseInterceptor> { BaseInterceptor(androidContext()) }
@@ -37,7 +38,8 @@ val dataModule = module {
     factory<StudentApiDataSource> { provideStudentApiDataSource(get()) }
     factory<StudentRepository> { provideStudentRepository(get()) }
 
-    factory<Resource.TokenManager> { provideTokenManager(androidContext()) }
+    factory<Resource.UserData> { provideSharedPrefUserDataSource(androidContext()) }
+    factory<UserDataRepository> {provideUserDataRepository(get())}
 }
 
 fun provideHttpLoggingInterceptor() : HttpLoggingInterceptor {
@@ -82,4 +84,7 @@ fun provideRuzRepository(ruzDataSource: RuzDataSource) : RuzRepository
 fun provideStudentRepository(studentApiDataSource: StudentApiDataSource) : StudentRepository
 = StudentRepositoryImpl(studentApiDataSource)
 
-fun provideTokenManager(context : Context) = SharedPrefTokenStorage(context)
+fun provideUserDataRepository(userDataDataSource : Resource.UserData) : UserDataRepository
+= UserDataRepositoryImpl(userDataDataSource)
+
+fun provideSharedPrefUserDataSource(context : Context) = SharedPrefTokenStorage(context)

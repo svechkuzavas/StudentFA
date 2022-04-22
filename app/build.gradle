@@ -82,4 +82,8 @@ dependencies {
     implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.5.3'
     // Logging interceptor
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
+    // Views Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
 }

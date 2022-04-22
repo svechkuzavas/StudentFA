@@ -9,7 +9,9 @@ sealed class AuthorizationModel{
     ) : AuthorizationModel()
 
     data class AuthorizationToken(
-        @SerializedName("token") val token : String
+        @SerializedName("token") val token : String,
+        @SerializedName("user_id") val userId : String,
+        @SerializedName("profile_id") val profileId : String
     ) : AuthorizationModel()
 
     data class Registration(

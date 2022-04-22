@@ -1,9 +1,9 @@
 package com.fa.studentfu.domain.usecase
 
-import com.fa.studentfu.core.data.Resource
+import com.fa.studentfu.domain.repo.UserDataRepository
 
-class LogoutUserUseCase(private val tokenManager: Resource.TokenManager) {
+class LogoutUserUseCase(private val userDataRepository: UserDataRepository) {
     suspend operator fun invoke() {
-        tokenManager.clearToken()
+        userDataRepository.clearUserData()
     }
 }

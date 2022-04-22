@@ -5,11 +5,13 @@ interface Resource {
         fun getString(key : String) : String
         fun saveString(key: String, value: String)
     }
-    interface TokenManager {
-        fun getHeader() : String
+    interface UserData {
         fun getToken() : String
-        fun saveHeader(header : String)
+        fun getProfileId() : String
+        fun getUserId() : String
         fun saveToken(token: String)
-        fun clearToken()
+        fun saveId(id : String)
+        fun saveUserId(id : String)
+        fun clearUserData()
     }
 }

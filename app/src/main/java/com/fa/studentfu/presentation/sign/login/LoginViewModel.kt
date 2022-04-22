@@ -7,16 +7,16 @@ import androidx.lifecycle.viewModelScope
 import com.fa.studentfu.core.data.BaseResult
 import com.fa.studentfu.data.models.AuthorizationModel
 import com.fa.studentfu.domain.usecase.LoginUserUseCase
-import com.fa.studentfu.domain.usecase.SaveTokenUseCase
+import com.fa.studentfu.domain.usecase.SaveUserDataUseCase
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
     private val loginUserUseCase: LoginUserUseCase,
-    private val saveTokenUseCase: SaveTokenUseCase
+    private val saveUserDataUseCase: SaveUserDataUseCase
 ) : ViewModel(){
 
-    private val loginData = LoginData("", "", "")
+    private val loginData = LoginData("", "", "", "", "")
     private val stateData : MutableLiveData<UiState> = MutableLiveData(UiState.Input(loginData))
     val state : LiveData<UiState> = stateData
 
@@ -37,8 +37,10 @@ class LoginViewModel(
                     when (result){
                         is BaseResult.Success -> {
                             loginData.token = result.data.token
+                            loginData.profileId = result.data.profileId
+                            loginData.userId = result.data.userId
                             stateData.postValue(
-                                UiState.ResultAvailable(LoginResult.Success(result.data.token))
+                                UiState.ResultAvailable(LoginResult.Success)
                             )
                         }
                         is BaseResult.Error -> {
@@ -51,9 +53,9 @@ class LoginViewModel(
         }
     }
 
-    fun saveToken(){
+    fun saveUserData(){
         viewModelScope.launch {
-            saveTokenUseCase(loginData.token)
+            saveUserDataUseCase(loginData.token, loginData.profileId, loginData.userId)
         }
     }
 
@@ -64,14 +66,15 @@ class LoginViewModel(
     }
 
     sealed class LoginResult {
-        class Success(val token: String) : LoginResult()
+        object Success : LoginResult()
         class Error(val message: String) : LoginResult()
     }
-
 
     data class LoginData(
         var username : String,
         var password : String,
-        var token : String
+        var token : String,
+        var profileId : String,
+        var userId : String
     )
 }
