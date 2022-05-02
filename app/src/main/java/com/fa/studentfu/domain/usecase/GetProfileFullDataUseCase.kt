@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 
-class GetProfileDataUseCase(
+class GetProfileFullDataUseCase(
     private val studentRepository: StudentRepository,
     private val userDataRepository: UserDataRepository
 ) {

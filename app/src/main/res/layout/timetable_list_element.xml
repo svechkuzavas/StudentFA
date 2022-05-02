@@ -37,16 +37,27 @@
         app:layout_constraintGuide_end="16dp"/>
 
     <TextView
-        android:id="@+id/timetable_lecture"
+        android:id="@+id/timetable_time"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/timetable_guide_top"
+        app:layout_constraintEnd_toEndOf="@id/timetable_guide_right"
+        tools:text="8:30-10:00"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/timetable_lecture"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/timetable_time"
         app:layout_constraintStart_toStartOf="@id/timetable_guide_left"
         app:layout_constraintEnd_toEndOf="@id/timetable_guide_right"
         tools:text="Название дисциплины"
         android:maxLines="1"
         android:ellipsize="end"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textColor="@color/black" />
 
     <TextView
@@ -55,8 +66,23 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/timetable_lecture"
         app:layout_constraintStart_toStartOf="@id/timetable_guide_left"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/timetable_auditorium"
         tools:text="Семинар"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:drawableStartCompat="@android:drawable/radiobutton_off_background"
+        android:drawablePadding="10dp"
+        app:drawableTint="@color/lecture"/>
+
+    <TextView
+        android:id="@+id/timetable_auditorium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/timetable_lecture"
+        app:layout_constraintStart_toEndOf="@id/timetable_type"
+        app:layout_constraintEnd_toEndOf="@id/timetable_guide_right"
+        tools:text="Аудитор."
+        android:textAlignment="textEnd"
         android:textSize="20sp"
         android:textColor="@color/black"/>
 
@@ -79,10 +105,11 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/timetable_groups"
         app:layout_constraintStart_toStartOf="@id/timetable_guide_left"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/timetable_guide_right"
         tools:text="Преподаватель"
-        android:textSize="20sp"
-        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:drawableStartCompat="@drawable/ic_account"
         android:drawablePadding="10dp"/>
 
@@ -93,10 +120,11 @@
         app:layout_constraintTop_toBottomOf="@+id/timetable_lecturer"
         app:layout_constraintBottom_toBottomOf="@+id/timetable_guide_bottom"
         app:layout_constraintStart_toStartOf="@id/timetable_guide_left"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/timetable_guide_right"
         tools:text="Корпус"
-        android:textSize="20sp"
-        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:drawableStartCompat="@drawable/ic_home_city"
         android:drawablePadding="10dp"/>
 

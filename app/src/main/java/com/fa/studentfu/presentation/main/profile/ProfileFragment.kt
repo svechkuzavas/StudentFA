@@ -47,6 +47,7 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding>(ProfileFragmentBind
         binding.profileSurname.text = model.lastName
         binding.profileEmail.text = model.email
         binding.profileGroup.text = model.group
+        binding.profileDescription.text = model.description
     }
 
     @SuppressLint("CheckResult")

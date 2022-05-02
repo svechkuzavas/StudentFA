@@ -5,14 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fa.studentfu.data.models.ProfileModel
-import com.fa.studentfu.domain.usecase.GetProfileDataUseCase
+import com.fa.studentfu.domain.usecase.GetProfileFullDataUseCase
 import com.fa.studentfu.domain.usecase.LogoutUserUseCase
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class ProfileViewModel(
     private val logoutUserUseCase: LogoutUserUseCase,
-    private val getProfileDataUseCase: GetProfileDataUseCase
+    private val getProfileDataUseCase: GetProfileFullDataUseCase
 ) : ViewModel() {
 
     private val _state = MutableLiveData<UiState>()

@@ -54,7 +54,7 @@ class LoginFragment :
         }
 
         binding.registrationSwitch.setOnClickListener{
-            findNavController().navigateSafely(LoginFragmentDirections.actionLoginToRegistration())
+            findNavController().navigate(LoginFragmentDirections.actionLoginToRegistration())
         }
 
 

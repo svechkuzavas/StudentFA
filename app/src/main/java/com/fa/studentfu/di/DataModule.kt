@@ -62,29 +62,29 @@ fun provideOkHttpClientTokenAuthorization(
     return OkHttpClientInst.TokenAuth(loggingInterceptor, baseInterceptor, tokenAuthInterceptor)
 }
 
-fun provideRetrofitStudentApi(okHttpClient: OkHttpClientInst.TokenAuth) : RetrofitInst.Student
-= RetrofitInst.Student(okHttpClient.client)
+fun provideRetrofitStudentApi(okHttpClient: OkHttpClientInst.TokenAuth) : RetrofitInst.Student =
+    RetrofitInst.Student(okHttpClient.client)
 
-fun provideRetrofitRuzApi(okHttpClient: OkHttpClientInst.Base): RetrofitInst.Ruz
-= RetrofitInst.Ruz(okHttpClient.client)
+fun provideRetrofitRuzApi(okHttpClient: OkHttpClientInst.Base): RetrofitInst.Ruz =
+    RetrofitInst.Ruz(okHttpClient.client)
 
 fun provideStudentApi(retrofit: RetrofitInst.Student) : StudentApi = retrofit.retrofit.create(StudentApi::class.java)
 
 fun provideRuzApi(retrofit: RetrofitInst.Ruz) : RuzApi = retrofit.retrofit.create(RuzApi::class.java)
 
-fun provideRuzDataSource(ruzApi: RuzApi) : RuzDataSource
-= RuzDataSource(ruzApi)
+fun provideRuzDataSource(ruzApi: RuzApi) : RuzDataSource =
+    RuzDataSource(ruzApi)
 
-fun provideStudentApiDataSource(studentApi: StudentApi) : StudentApiDataSource
-= StudentApiDataSource(studentApi)
+fun provideStudentApiDataSource(studentApi: StudentApi) : StudentApiDataSource =
+    StudentApiDataSource(studentApi)
 
-fun provideRuzRepository(ruzDataSource: RuzDataSource) : RuzRepository
-= RuzRepositoryImpl(ruzDataSource)
+fun provideRuzRepository(ruzDataSource: RuzDataSource) : RuzRepository =
+    RuzRepositoryImpl(ruzDataSource)
 
-fun provideStudentRepository(studentApiDataSource: StudentApiDataSource) : StudentRepository
-= StudentRepositoryImpl(studentApiDataSource)
+fun provideStudentRepository(studentApiDataSource: StudentApiDataSource) : StudentRepository =
+    StudentRepositoryImpl(studentApiDataSource)
 
-fun provideUserDataRepository(userDataDataSource : Resource.UserData) : UserDataRepository
-= UserDataRepositoryImpl(userDataDataSource)
+fun provideUserDataRepository(userDataDataSource : Resource.UserData) : UserDataRepository =
+    UserDataRepositoryImpl(userDataDataSource)
 
 fun provideSharedPrefUserDataSource(context : Context) = SharedPrefTokenStorage(context)

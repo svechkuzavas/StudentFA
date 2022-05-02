@@ -9,21 +9,13 @@
         android:id="@+id/navigation_news"
         android:name="com.fa.studentfu.presentation.main.news.NewsFragment"
         android:label="News Fragment"
-        tools:layout="@layout/news_fragment" >
-        <action
-            android:id="@+id/action_navigation_news_to_navigation_timetable"
-            app:destination="@id/navigation_timetable" />
-    </fragment>
+        tools:layout="@layout/news_fragment" />
 
     <fragment
         android:id="@+id/navigation_timetable"
         android:name="com.fa.studentfu.presentation.main.timetable.TimetableFragment"
         android:label="Timetable Fragment"
-        tools:layout="@layout/timetable_fragment">
-        <action
-            android:id="@+id/action_navigation_timetable_to_navigation_reference"
-            app:destination="@id/navigation_reference" />
-    </fragment>
+        tools:layout="@layout/timetable_fragment"/>
 
     <fragment
         android:id="@+id/navigation_reference"
@@ -31,8 +23,8 @@
         android:label="Reference Fragment"
         tools:layout="@layout/references_fragment">
         <action
-            android:id="@+id/action_navigation_reference_to_navigation_profile"
-            app:destination="@id/navigation_profile" />
+            android:id="@+id/action_reference_to_referenceAdd"
+            app:destination="@id/referenceAddBottomSheetDialog" />
     </fragment>
 
     <fragment
@@ -40,5 +32,13 @@
         android:name="com.fa.studentfu.presentation.main.profile.ProfileFragment"
         android:label="Profile Fragment"
         tools:layout="@layout/profile_fragment"/>
+    <dialog
+        android:id="@+id/referenceAddBottomSheetDialog"
+        android:name="com.fa.studentfu.presentation.main.reference.ReferenceAddBottomSheetDialog"
+        android:label="ReferenceAddBottomSheetDialog" >
+        <action
+            android:id="@+id/action_referenceAdd_to_reference"
+            app:destination="@id/navigation_reference" />
+    </dialog>
 
 </navigation>

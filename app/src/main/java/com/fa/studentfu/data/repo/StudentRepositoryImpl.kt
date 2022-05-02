@@ -2,9 +2,9 @@ package com.fa.studentfu.data.repo
 
 import com.fa.studentfu.core.data.BaseResult
 import com.fa.studentfu.core.data.Failure
+import com.fa.studentfu.data.models.ArticleModel
 import com.fa.studentfu.data.models.AuthorizationModel
 import com.fa.studentfu.data.models.ProfileModel
-import com.fa.studentfu.data.models.UserApiModel
 import com.fa.studentfu.data.net.StudentApiDataSource
 import com.fa.studentfu.domain.repo.StudentRepository
 import kotlinx.coroutines.flow.Flow
@@ -25,6 +25,13 @@ class StudentRepositoryImpl(private val studentApiDataSource: StudentApiDataSour
             Flow<BaseResult<ProfileModel, Failure>> {
         return flow{
             val result = studentApiDataSource.fetchUserProfile(id)
+            emit(result)
+        }
+    }
+
+    override suspend fun fetchNews(): Flow<BaseResult<List<ArticleModel>, Failure>> {
+        return flow{
+            val result = studentApiDataSource.fetchNews()
             emit(result)
         }
     }

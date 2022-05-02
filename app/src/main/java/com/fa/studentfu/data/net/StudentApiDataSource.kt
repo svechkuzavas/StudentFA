@@ -5,9 +5,9 @@ import com.fa.studentfu.core.data.Failure
 import com.fa.studentfu.core.data.NoConnectivityException
 import com.fa.studentfu.core.data.NoInternetException
 import com.fa.studentfu.data.StudentApi
+import com.fa.studentfu.data.models.ArticleModel
 import com.fa.studentfu.data.models.AuthorizationModel
 import com.fa.studentfu.data.models.ProfileModel
-import com.fa.studentfu.data.models.UserApiModel
 import java.lang.Exception
 
 class StudentApiDataSource(private val studentApi : StudentApi) {
@@ -48,7 +48,7 @@ class StudentApiDataSource(private val studentApi : StudentApi) {
     : BaseResult<ProfileModel, Failure> {
         try {
             val response = studentApi.fetchUserProfile(id)
-            var profileModel = ProfileModel("", "", "", "", "", "")
+            var profileModel = ProfileModel("", "", "", "", "", "", "")
             return when {
                 response.isSuccessful -> {
                     response.body()?.let { result ->
@@ -58,10 +58,41 @@ class StudentApiDataSource(private val studentApi : StudentApi) {
                             imageUrl = result.imageUrl,
                             group = result.group,
                             lastName = result.lastName,
-                            email = result.email
+                            email = result.email,
+                            description = result.description
                         )
                     }
                     BaseResult.Success(profileModel)
+                }
+                response.code() == 400 -> {
+                    BaseResult.Error(Failure(response.code(), "Ошибка сервера"))
+                }
+                response.code() == 401 -> {
+                    BaseResult.Error(Failure(response.code(), "Вы не авторизованы"))
+                }
+                else -> {
+                    BaseResult.Error(Failure(response.code(), response.message()))
+                }
+            }
+        } catch (e : NoInternetException){
+            return BaseResult.Error(Failure(0, e.message))
+        } catch (e : NoConnectivityException){
+            return BaseResult.Error(Failure(1, e.message))
+        } catch (e : Exception){
+            return BaseResult.Error(Failure(2, e.message.toString()))
+        }
+    }
+
+    suspend fun fetchNews() : BaseResult<List<ArticleModel>, Failure>{
+        try {
+            val response = studentApi.fetchArticles()
+            return when {
+                response.isSuccessful -> {
+                    val news = mutableListOf<ArticleModel>()
+                    response.body()?.let { result ->
+                        news.addAll(result)
+                    }
+                    BaseResult.Success(news)
                 }
                 response.code() == 400 -> {
                     BaseResult.Error(Failure(response.code(), "Ошибка сервера"))

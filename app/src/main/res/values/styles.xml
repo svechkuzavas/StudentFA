@@ -46,4 +46,12 @@
 
     <style name="ProfileTextView">
     </style>
+
+    <style name="ToggleButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="strokeColor">@color/toggle_button_stroke</item>
+        <item name="android:textColor">@color/toggle_button_stroke</item>
+        <item name="android:backgroundTint">@color/toggle_button_background</item>
+    </style>
 </resources>

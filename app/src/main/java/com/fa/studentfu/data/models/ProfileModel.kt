@@ -8,5 +8,6 @@ data class ProfileModel(
     @SerializedName("email") val email: String,
     @SerializedName("group") val group: String,
     @SerializedName("role") val role: String,
-    @SerializedName("image_url") val imageUrl: String
+    @SerializedName("image_url") val imageUrl: String,
+    @SerializedName("description") val description: String
 )
