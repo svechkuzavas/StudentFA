@@ -32,7 +32,7 @@ val dataModule = module {
     factory<StudentApi> { provideStudentApi(get()) }
     factory<RuzApi> { provideRuzApi(get()) }
 
-    factory<RuzDataSource> { provideRuzDataSource(get()) }
+    factory<RuzApiDataSource> { provideRuzDataSource(get()) }
     factory<RuzRepository> { provideRuzRepository(get()) }
 
     factory<StudentApiDataSource> { provideStudentApiDataSource(get()) }
@@ -72,14 +72,14 @@ fun provideStudentApi(retrofit: RetrofitInst.Student) : StudentApi = retrofit.re
 
 fun provideRuzApi(retrofit: RetrofitInst.Ruz) : RuzApi = retrofit.retrofit.create(RuzApi::class.java)
 
-fun provideRuzDataSource(ruzApi: RuzApi) : RuzDataSource =
-    RuzDataSource(ruzApi)
+fun provideRuzDataSource(ruzApi: RuzApi) : RuzApiDataSource =
+    RuzApiDataSource(ruzApi)
 
 fun provideStudentApiDataSource(studentApi: StudentApi) : StudentApiDataSource =
     StudentApiDataSource(studentApi)
 
-fun provideRuzRepository(ruzDataSource: RuzDataSource) : RuzRepository =
-    RuzRepositoryImpl(ruzDataSource)
+fun provideRuzRepository(ruzApiDataSource: RuzApiDataSource) : RuzRepository =
+    RuzRepositoryImpl(ruzApiDataSource)
 
 fun provideStudentRepository(studentApiDataSource: StudentApiDataSource) : StudentRepository =
     StudentRepositoryImpl(studentApiDataSource)

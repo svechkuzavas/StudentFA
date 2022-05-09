@@ -37,6 +37,7 @@ class NewsFragment : BaseFragment<NewsFragmentBinding>(NewsFragmentBinding::infl
                     binding.newsProgress?.visibility = View.VISIBLE
                 }
                 is NewsViewModel.UiState.ResultAvailable -> {
+                    binding.newsProgress?.visibility = View.GONE
                     refreshRecycler(it.articles)
                 }
             }
@@ -47,11 +48,15 @@ class NewsFragment : BaseFragment<NewsFragmentBinding>(NewsFragmentBinding::infl
         binding.newsRecycler?.layoutManager = LinearLayoutManager(
             context, LinearLayoutManager.VERTICAL, false
         )
-        val timetableFastAdapter = FastAdapter.with(newsAdapter)
-        binding.newsRecycler?.adapter = timetableFastAdapter
+        val newsFastAdapter = FastAdapter.with(newsAdapter)
+        binding.newsRecycler?.adapter = newsFastAdapter
     }
 
     private fun refreshRecycler(articleList : List<ArticleModel>){
-        FastAdapterDiffUtil[newsAdapter] = articleList.map(::ArticleItem)
+        val items : ArrayList<ArticleItem> = ArrayList()
+        articleList.forEach{
+            context?.let { it1 -> ArticleItem(it, it1) }?.let { it2 -> items.add(it2) }
+        }
+        FastAdapterDiffUtil[newsAdapter] = items
     }
 }

@@ -3,11 +3,9 @@ package com.fa.studentfu.data
 import com.fa.studentfu.data.models.ArticleModel
 import com.fa.studentfu.data.models.AuthorizationModel
 import com.fa.studentfu.data.models.ProfileModel
+import com.fa.studentfu.data.models.ReferenceModel
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface StudentApi {
     @POST("api-token-auth/")
@@ -21,5 +19,7 @@ interface StudentApi {
 
     @GET("article/")
     suspend fun fetchArticles() : Response<List<ArticleModel>>
-}
 
+    @GET("reference")
+    suspend fun fetchReferencesUser(@Query("user") userId : String) : Response<List<ReferenceModel>>
+}

@@ -11,20 +11,15 @@ import com.fa.studentfu.data.models.ArticleModel
 import com.fa.studentfu.databinding.ArticleListElementBinding
 import com.mikepenz.fastadapter.binding.AbstractBindingItem
 
-class ArticleItem(private val article : ArticleModel)
+class ArticleItem(private val article : ArticleModel, private val context: Context)
     : AbstractBindingItem<ArticleListElementBinding>() {
     override val type: Int
         get() = R.id.news_recycler
-
-    private lateinit var context : Context
 
     override fun createBinding(
         inflater: LayoutInflater,
         parent: ViewGroup?
     ): ArticleListElementBinding {
-        if (parent != null) {
-            context = parent.context
-        }
         return ArticleListElementBinding.inflate(inflater, parent, false)
     }
 

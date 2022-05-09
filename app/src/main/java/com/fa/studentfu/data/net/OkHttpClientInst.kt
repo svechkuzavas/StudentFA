@@ -7,6 +7,8 @@ import okhttp3.logging.HttpLoggingInterceptor
 import kotlin.math.log
 
 sealed class OkHttpClientInst {
+    // Базовая реализация клиента с логированием запросов и
+    // проверкой сетевого подключения
     class Base(
         loggingInterceptor: HttpLoggingInterceptor,
         interceptorBase: BaseInterceptor): OkHttpClientInst(){
@@ -16,6 +18,8 @@ sealed class OkHttpClientInst {
             .addInterceptor(loggingInterceptor)
             .build()
     }
+    // Реализация клиента с функционалом базового и
+    // аутентификацией по токену
     class TokenAuth(
         loggingInterceptor: HttpLoggingInterceptor,
         interceptorBase: BaseInterceptor,

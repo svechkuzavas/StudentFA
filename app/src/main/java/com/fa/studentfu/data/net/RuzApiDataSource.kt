@@ -9,7 +9,7 @@ import com.fa.studentfu.domain.models.GroupSearchModel
 import com.fa.studentfu.domain.models.ScheduleModel
 import java.lang.Exception
 
-class RuzDataSource(private val ruzApi : RuzApi) {
+class RuzApiDataSource(private val ruzApi : RuzApi) {
     suspend fun fetchSearchResults(term : String) : BaseResult<List<GroupSearchModel>, Failure>{
         try {
             val response = ruzApi.searchGroup(input = term)
