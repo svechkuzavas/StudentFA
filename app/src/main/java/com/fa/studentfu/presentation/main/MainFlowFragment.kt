@@ -9,13 +9,12 @@ import com.fa.studentfu.core.ui.BaseFlowFragment
 import com.fa.studentfu.databinding.MainFlowFragmentBinding
 import com.fa.studentfu.presentation.main.news.NewsFragment
 import com.fa.studentfu.presentation.main.profile.ProfileFragment
-import com.fa.studentfu.presentation.main.reference.ReferenceAdd
 import com.fa.studentfu.presentation.main.reference.ReferenceAddBottomSheetDialog
 import com.fa.studentfu.presentation.main.reference.ReferenceFragment
 import com.fa.studentfu.presentation.main.timetable.TimetableFragment
 
 class MainFlowFragment : BaseFlowFragment(
-    R.layout.main_flow_fragment), ReferenceAdd{
+    R.layout.main_flow_fragment){
 
     private val binding by viewBinding(MainFlowFragmentBinding::bind)
 
@@ -36,9 +35,5 @@ class MainFlowFragment : BaseFlowFragment(
     private fun replaceFragment(fragment : Fragment) : Boolean {
         childFM.beginTransaction().replace(R.id.main_flow_container, fragment).commit()
         return true
-    }
-
-    override fun addClicked() {
-        replaceFragment(ReferenceAddBottomSheetDialog())
     }
 }

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.viewbinding.ViewBinding
+import com.fa.studentfu.R
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -23,6 +24,10 @@ abstract class BaseBottomSheetDialogFragment<T : ViewBinding>(
     ): View? {
         _binding = inflate.invoke(inflater, container, false)
         return binding.root
+    }
+
+    override fun getTheme(): Int {
+        return R.style.CustomBottomSheetDialog
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

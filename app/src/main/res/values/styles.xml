@@ -14,12 +14,43 @@
         <item name="hintTextColor">@color/black</item>
     </style>
 
+    <style name="MaterialInputDropdown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="o">10dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxBackgroundColor">@color/input_bg</item>
+        <item name="boxCornerRadiusBottomEnd">25dp</item>
+        <item name="boxCornerRadiusBottomStart">25dp</item>
+        <item name="boxCornerRadiusTopEnd">25dp</item>
+        <item name="boxCornerRadiusTopStart">25dp</item>
+        <item name="hintTextAppearance">@style/HintTextAppearance</item>
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="hintTextColor">@color/black</item>
+    </style>
+
     <style name="IconButtonPrimary" parent="Widget.MaterialComponents.Button.Icon">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">18sp</item>
         <item name="shapeAppearanceOverlay">@style/MyShapeAppearance</item>
         <item name="android:layout_marginHorizontal" tools:targetApi="o">@dimen/button_margin</item>
+    </style>
+
+    <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+    </style>
+
+    <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/CustomShapeAppearanceBottomSheetDialog</item>
+    </style>
+
+    <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
     </style>
 
     <style name="MyShapeAppearance">

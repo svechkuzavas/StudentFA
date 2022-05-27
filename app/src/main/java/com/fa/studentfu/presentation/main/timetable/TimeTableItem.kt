@@ -27,6 +27,7 @@ class TimeTableItem(private val scheduleModel: ScheduleModel)
     @RequiresApi(Build.VERSION_CODES.M)
     override fun bindView(binding: TimetableListElementBinding, payloads: List<Any>) {
         super.bindView(binding, payloads)
+        handleType(binding)
         binding.timetableBuilding.text = scheduleModel.building
         binding.timetableGroups.text = scheduleModel.groups
         binding.timetableLecture.text = scheduleModel.discipline
@@ -35,7 +36,6 @@ class TimeTableItem(private val scheduleModel: ScheduleModel)
         binding.timetableGroups.text = scheduleModel.groups
         binding.timetableAuditorium.text = scheduleModel.auditorium
         binding.timetableTime.text = scheduleModel.time
-        handleType(binding)
     }
 
     private fun handleType(binding: TimetableListElementBinding){

@@ -20,6 +20,6 @@ interface StudentApi {
     @GET("article/")
     suspend fun fetchArticles() : Response<List<ArticleModel>>
 
-    @GET("reference")
-    suspend fun fetchReferencesUser(@Query("user") userId : String) : Response<List<ReferenceModel>>
+    @GET("reference/")
+    suspend fun fetchReferencesUser() : Response<List<ReferenceModel>>
 }

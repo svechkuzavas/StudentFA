@@ -12,4 +12,8 @@
     <color name="bg_primary">#FBEFE2</color>
     <color name="lecture">#6BE88E</color>
     <color name="seminar">#EFCA6B</color>
+    <color name="received">#EF476F</color>
+    <color name="in_process">#FFC43D</color>
+    <color name="finished">#1B9AAA</color>
+    <color name="ready">#06D6A0</color>
 </resources>

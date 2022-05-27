@@ -8,6 +8,7 @@ import com.fa.studentfu.data.StudentApi
 import com.fa.studentfu.data.models.ArticleModel
 import com.fa.studentfu.data.models.AuthorizationModel
 import com.fa.studentfu.data.models.ProfileModel
+import com.fa.studentfu.data.models.ReferenceModel
 import java.lang.Exception
 
 class StudentApiDataSource(private val studentApi : StudentApi) {
@@ -89,6 +90,36 @@ class StudentApiDataSource(private val studentApi : StudentApi) {
             return when {
                 response.isSuccessful -> {
                     val news = mutableListOf<ArticleModel>()
+                    response.body()?.let { result ->
+                        news.addAll(result)
+                    }
+                    BaseResult.Success(news)
+                }
+                response.code() == 400 -> {
+                    BaseResult.Error(Failure(response.code(), "Ошибка сервера"))
+                }
+                response.code() == 401 -> {
+                    BaseResult.Error(Failure(response.code(), "Вы не авторизованы"))
+                }
+                else -> {
+                    BaseResult.Error(Failure(response.code(), response.message()))
+                }
+            }
+        } catch (e : NoInternetException){
+            return BaseResult.Error(Failure(0, e.message))
+        } catch (e : NoConnectivityException){
+            return BaseResult.Error(Failure(1, e.message))
+        } catch (e : Exception){
+            return BaseResult.Error(Failure(2, e.message.toString()))
+        }
+    }
+
+    suspend fun fetchReferences() : BaseResult<List<ReferenceModel>, Failure>{
+        try {
+            val response = studentApi.fetchReferencesUser()
+            return when {
+                response.isSuccessful -> {
+                    val news = mutableListOf<ReferenceModel>()
                     response.body()?.let { result ->
                         news.addAll(result)
                     }

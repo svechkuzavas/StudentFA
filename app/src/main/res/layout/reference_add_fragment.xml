@@ -1,13 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginVertical="10dp"
+    android:layout_marginHorizontal="10dp">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_inputs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
+        app:constraint_referenced_ids="reference_dialog_address,reference_dialog_department, reference_dialog_form, reference_dialog_method, reference_dialog_organization, reference_dialog_stud"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="10dp"
+        android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="10dp"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:id="@+id/reference_dialog_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textSize="36sp"
         android:textColor="@color/green_fa"
-        android:text="Здесь будет оформление справки"/>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guide_left"
+        app:layout_constraintEnd_toStartOf="@id/reference_dialog_close"
+        android:text="Оформление справки"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/reference_dialog_close"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/reference_dialog_header"
+        app:layout_constraintEnd_toEndOf="@id/guide_right"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_close"
+        android:tint="@color/green_fa"
+        android:padding="5dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reference_dialog_stud"
+        android:hint="Номер студенческого"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/reference_dialog_header"
+        style="@style/MaterialInputPrimary"
+        app:endIconMode="clear_text">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reference_dialog_stud_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reference_dialog_form"
+        android:hint="Форма обучения"
+        app:layout_constraintTop_toBottomOf="@+id/reference_dialog_stud"
+        app:layout_constraintEnd_toStartOf="@id/reference_dialog_method"
+        app:layout_constraintStart_toStartOf="@id/guide_left"
+        style="@style/MaterialInputDropdown">
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/reference_dialog_form_edit"
+            android:layout_width="match_parent"
+            android:inputType="none"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reference_dialog_method"
+        android:hint="Получение"
+        app:layout_constraintTop_toBottomOf="@+id/reference_dialog_stud"
+        app:layout_constraintStart_toEndOf="@id/reference_dialog_form"
+        app:layout_constraintEnd_toEndOf="@id/guide_right"
+        style="@style/MaterialInputDropdown"
+        app:startIconDrawable="@drawable/ic_receive">
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/reference_dialog_method_edit"
+            android:layout_width="match_parent"
+            android:inputType="none"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reference_dialog_address"
+        android:hint="Территория"
+        app:layout_constraintTop_toBottomOf="@+id/reference_dialog_method"
+        app:layout_constraintStart_toStartOf="@id/guide_left"
+        app:layout_constraintEnd_toEndOf="@id/guide_right"
+        app:startIconDrawable="@drawable/ic_home_city"
+        style="@style/MaterialInputDropdown">
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/reference_dialog_address_edit"
+            android:layout_width="match_parent"
+            android:inputType="none"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reference_dialog_department"
+        android:hint="Департамент"
+        app:layout_constraintTop_toBottomOf="@+id/reference_dialog_address"
+        app:layout_constraintStart_toStartOf="@id/guide_left"
+        app:layout_constraintEnd_toEndOf="@id/guide_right"
+        style="@style/MaterialInputDropdown">
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/reference_dialog_department_edit"
+            android:layout_width="match_parent"
+            android:inputType="none"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reference_dialog_organization"
+        android:hint="Для организации"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/reference_dialog_department"
+        style="@style/MaterialInputPrimary"
+        app:endIconMode="clear_text">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reference_dialog_organization_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/reference_dialog_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/reference_dialog_organization"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="20sp"
+        android:backgroundTint="@color/green_fa"
+        android:text="Отправить"
+        android:textColor="@color/white"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

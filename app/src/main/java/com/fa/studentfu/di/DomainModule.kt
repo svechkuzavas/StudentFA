@@ -12,4 +12,5 @@ val domainModule = module {
     factory { GetProfileFullDataUseCase(get(), get())}
     factory { GetScheduleUseCase(get())}
     factory { GetNewsUseCase(get())}
+    factory { GetReferencesUseCase(get())}
 }
