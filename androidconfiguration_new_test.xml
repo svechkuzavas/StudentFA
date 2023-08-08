@@ -5010,7 +5010,7 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
         <pair id="enabled">true</pair>
     </param>
    <param description="Ïàðàìåòð äîñòóïíîñòè âòîðîé âåðñèè ôóíêöèîíàëà íàòèâíîãî çàêàçà ÄÊ íåêëèåíòîì" id="nonClientsPreloginV3Enabled">
-        <pair id="enabled">true</pair>
+        <pair id="enabled">false</pair>
     </param>
   <param description="Ïàðàìåòð äîñòóïíîñòè ôóíêöèîíàëà íàòèâíîãî çàêàçà ÄÊ íåêëèåíòîì ñ âîçìîæíîñòüþ äîñòàâêè" id="nonClientsPreloginV4Enabled">
     <pair id="enabled">true</pair>
