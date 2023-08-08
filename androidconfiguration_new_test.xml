@@ -5013,7 +5013,7 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
         <pair id="enabled">true</pair>
     </param>
   <param description="Ïàðàìåòð äîñòóïíîñòè ôóíêöèîíàëà íàòèâíîãî çàêàçà ÄÊ íåêëèåíòîì ñ âîçìîæíîñòüþ äîñòàâêè" id="nonClientsPreloginV4Enabled">
-    <pair id="enabled">false</pair>
+    <pair id="enabled">true</pair>
     <pair id="deliveryRussianPassport">true</pair>
     <pair id="deliveryForeignPassport">false</pair>
     <pair id="deliveryResidencePermit">false</pair>
