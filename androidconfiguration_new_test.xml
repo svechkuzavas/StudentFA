@@ -5026,7 +5026,7 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
     <pair id="deliveryMilitaryCard">false</pair>
     </param>
   <param description="Параметр доступности функционала нативного заказа ДК неклиентом с возможностью доставки" id="nativeNonClientsDcClaim">
-    <pair id="enabled">false</pair>
+    <pair id="enabled">true</pair>
     <pair id="momentumEnabled">true</pair>
     <pair id="deliveryRussianPassport">true</pair>
     <pair id="deliveryForeignPassport">false</pair>
