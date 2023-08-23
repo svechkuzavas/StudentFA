@@ -2183,11 +2183,11 @@
         <pair id="enabled">false</pair>
         <pair id="AnimationSettingsMainScreen2020Enabled">true</pair>
         <pair id="GreetingInMainScreenSettings">true</pair>
-        <pair id="InterestsInMainScreenSettings">false</pair>
+        <pair id="InterestsInMainScreenSettings">true</pair>
         <map id="nodes">
             <map id="mobile-psinode1.testonline.sberbank.ru">
                 <pair id="GreetingInMainScreenSettings">true</pair>
-                <pair id="InterestsInMainScreenSettings">false</pair>
+                <pair id="InterestsInMainScreenSettings">true</pair>
             </map>
             <map id="mobile-psinode2.testonline.sberbank.ru">
                 <pair id="GreetingInMainScreenSettings">true</pair>
@@ -5004,13 +5004,13 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
         <pair id="userAgreement">https://www.sberbank.ru/common/img/uploaded/files/pdf/policy.pdf</pair>
         <pair id="sberIDAgreement">https://stat.online.sberbank.ru/SBERBANKID/Offer_140420.pdf</pair>
         <pair id="NonClientsCatalog">https://test.stat.online.sberbank.ru/SUPERAPP/sbolconfig/neklienty/prelogin.android.catalog.json</pair>
-        <pair id="NonClientsPreloginCatalog">https://cms-res.testonline.sberbank.ru/nonclientsv2/NonClientsPreloginCatalog.json</pair>
+        <pair id="NonClientsPreloginCatalog">https://ift-stat.testonline.sberbank.ru:4463/SBERCMS/nonclientsv2/prelogin.v2.android.nonclient.catalog.json</pair>
         <pair id="NonClientsPreloginCards">https://cms-res.testonline.sberbank.ru/nonclientsv2/prelogin.android.nonclient.cards.json</pair>
         <pair id="NonClientsPreloginExtended">https://cms-res.testonline.sberbank.ru/nonclientsv2/prelogin.android.nonclient.ext.json</pair>
         <pair id="nonClientsPreloginV2Cards">https://ift-stat.testonline.sberbank.ru:4463/SBERCMS/nonclientsv2/prelogin.v2.android.nonclient.cards.json</pair>
-        <pair id="nonClientsPreloginV2Faq">https://cms-res.testonline.sberbank.ru/nonclientsv2/prelogin.v2.android.nonclient.faq.json</pair>
-        <pair id="nonClientsPreloginV2UfsURL">https://nginx-and-ift-g1.testonline.sberbank.ru</pair>
-        <pair id="nonClientsPreloginV2UfsReserveURL">https://nginx-and-ift-g1.testonline.sberbank.ru</pair>
+        <pair id="nonClientsPreloginV2Faq">https://ift-stat.testonline.sberbank.ru:4463/SBERCMS/nonclientsv2/prelogin.v2.android.nonclient.faq.json</pair>
+        <pair id="nonClientsPreloginV2UfsURL">https://mobile-psi-guest1.testonline.sberbank.ru:8543</pair>
+        <pair id="nonClientsPreloginV2UfsReserveURL">https://mobile-psi-guest1-si.testonline.sberbank.ru:8543</pair>
     </param>
     <param description="Параметр доступности функционала нативного заказа ДК неклиентом" id="nonClientsPreloginV2Enabled">
         <pair id="enabled">false</pair>
@@ -5018,13 +5018,21 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
    <param description="Параметр доступности второй версии функционала нативного заказа ДК неклиентом" id="nonClientsPreloginV3Enabled">
         <pair id="enabled">true</pair>
     </param>
-  <param description="Параметр доступности функционала нативного заказа ДК неклиентом с возможностью доставки" id="nonClientsPreloginV4Enabled">
+  <param description="Параметр доступности функционала нативного заказа ДК неклиентом с возможностью доставки (14.17-14.18)" id="nonClientsPreloginV4Enabled">
     <pair id="enabled">true</pair>
     <pair id="deliveryRussianPassport">true</pair>
     <pair id="deliveryForeignPassport">false</pair>
     <pair id="deliveryResidencePermit">false</pair>
     <pair id="deliveryMilitaryCard">false</pair>
     </param>
+  <param description="Параметр доступности функционала нативного заказа ДК неклиентом с возможностью доставки" id="nativeNonClientsDcClaim">
+    <pair id="enabled">false</pair>
+    <pair id="momentumEnabled">true</pair>
+    <pair id="deliveryRussianPassport">true</pair>
+    <pair id="deliveryForeignPassport">false</pair>
+    <pair id="deliveryResidencePermit">false</pair>
+    <pair id="deliveryMilitaryCard">false</pair>
+  </param>
   	<param description="Параметр доступности функционала блока часто задаваемых вопросов" id="NonClientPreloginFaqEnabled">
       	<pair id="enabled">true</pair>
   	</param>
@@ -9738,57 +9746,57 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
         <pair id="confirmURL">https://eistest.online.sberbank.ru:9443/ext-integration-service-app/tokens/confirmOffer</pair>
     </param>
     <param id="MainScreenAlertEnabled" description="Отображение предупреждающего баннера на Главном экране">
-        <pair id="enabled_12.17">true</pair>
-        <pair id="MainScreenAlertEnabledForNonActiveCards">false</pair>
+        <pair id="enabled_12.17">false</pair>
+        <pair id="MainScreenAlertEnabledForNonActiveCards">true</pair>
         <pair id="MainScreenAlertEnabledCtaFix">true</pair>
       	<pair id="linksForNotificationsMainBanner">true</pair>
 		<pair id="mainScreenAlertLink">https://www.sberbank.ru/common/img/uploaded/files/sbol_tc.pdf</pair>
     <map id="nodes">
             <map id="ift-node1-mp.testonline.sberbank.ru">
-                <pair id="enabled_12.17">true</pair>
-                <pair id="MainScreenAlertEnabledForNonActiveCards">false</pair>
+                <pair id="enabled_12.17">false</pair>
+                <pair id="MainScreenAlertEnabledForNonActiveCards">true</pair>
                 <pair id="MainScreenAlertEnabledCtaFix">true</pair>
               	<pair id="linksForNotificationsMainBanner">true</pair>
             </map>
       		<map id="ift-node5-mp.testonline.sberbank.ru">
-                <pair id="enabled_12.17">true</pair>
-                <pair id="MainScreenAlertEnabledForNonActiveCards">false</pair>
+                <pair id="enabled_12.17">false</pair>
+                <pair id="MainScreenAlertEnabledForNonActiveCards">true</pair>
                 <pair id="MainScreenAlertEnabledCtaFix">true</pair>
               	<pair id="linksForNotificationsMainBanner">true</pair>
             </map>
       		<map id="ift-node7-mp.testonline.sberbank.ru">
-                <pair id="enabled_12.17">true</pair>
-                <pair id="MainScreenAlertEnabledForNonActiveCards">false</pair>
+                <pair id="enabled_12.17">false</pair>
+                <pair id="MainScreenAlertEnabledForNonActiveCards">true</pair>
                 <pair id="MainScreenAlertEnabledCtaFix">true</pair>
               	<pair id="linksForNotificationsMainBanner">true</pair>
             </map>
       		<map id="mobile-psinode1.testonline.sberbank.ru">
-                <pair id="enabled_12.17">true</pair>
-                <pair id="MainScreenAlertEnabledForNonActiveCards">false</pair>
+                <pair id="enabled_12.17">false</pair>
+                <pair id="MainScreenAlertEnabledForNonActiveCards">true</pair>
                 <pair id="MainScreenAlertEnabledCtaFix">true</pair>
               	<pair id="linksForNotificationsMainBanner">true</pair>
             </map>
       		<map id="mobile-psi-node1.testonline.sberbank.ru">
-                <pair id="enabled_12.17">true</pair>
-                <pair id="MainScreenAlertEnabledForNonActiveCards">false</pair>
+                <pair id="enabled_12.17">false</pair>
+                <pair id="MainScreenAlertEnabledForNonActiveCards">true</pair>
                 <pair id="MainScreenAlertEnabledCtaFix">true</pair>
               	<pair id="linksForNotificationsMainBanner">true</pair>
             </map>
       		<map id="mobile-psinode2.testonline.sberbank.ru">
-                <pair id="enabled_12.17">true</pair>
-                <pair id="MainScreenAlertEnabledForNonActiveCards">false</pair>
+                <pair id="enabled_12.17">false</pair>
+                <pair id="MainScreenAlertEnabledForNonActiveCards">true</pair>
                 <pair id="MainScreenAlertEnabledCtaFix">true</pair>
               	<pair id="linksForNotificationsMainBanner">true</pair>
             </map>
       		<map id="mobile-psi-node2.testonline.sberbank.ru">
-                <pair id="enabled_12.17">true</pair>
-                <pair id="MainScreenAlertEnabledForNonActiveCards">trfalseue</pair>
+                <pair id="enabled_12.17">false</pair>
+                <pair id="MainScreenAlertEnabledForNonActiveCards">true</pair>
                 <pair id="MainScreenAlertEnabledCtaFix">true</pair>
               	<pair id="linksForNotificationsMainBanner">true</pair>
             </map>
       		<map id="mobile-psinode4.testonline.sberbank.ru">
-                <pair id="enabled_12.17">true</pair>
-                <pair id="MainScreenAlertEnabledForNonActiveCards">false</pair>
+                <pair id="enabled_12.17">false</pair>
+                <pair id="MainScreenAlertEnabledForNonActiveCards">true</pair>
                 <pair id="MainScreenAlertEnabledCtaFix">true</pair>
               	<pair id="linksForNotificationsMainBanner">true</pair>
             </map>
@@ -17173,7 +17181,7 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
     </param>
     <param description="Тариф карты" id="TariffDebitCard">
         <pair id="enabled">true</pair>
-        <pair id="link">https://cms-res.testonline.sberbank.ru/swscreen/card_tariff/card_tariffs_v5.xml</pair>
+        <pair id="link">https://cms-res.testonline.sberbank.ru/swscreen/card_tariff/card_tariffs_v6.xml</pair>
     </param>
     <param description="Международный карточный перевод" id="P2POverseasCardTransferExtended">
         <pair id="enabled">true</pair>
@@ -17685,7 +17693,7 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
         <pair id="releaseNotesScreenV2Enabled">false</pair>
         <pair id="switchApi207">true</pair>
         <pair id="eaptekaVspCard">true</pair>
-        <pair id="redesignEaptekaEnabled">false</pair>
+        <pair id="redesignEaptekaEnabled">true</pair>
         <pair id="showServicesEaptekaButton">true</pair>
         <pair id="showSpasiboEaptekaButton">true</pair>
         <pair id="showAboutEaptekaButton">true</pair>
@@ -18734,7 +18742,7 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
                 <pair id="packsPaymentEnabled">true</pair>
                 <pair id="greetingRefactoringEnabled">false</pair>
             	<pair id="packsParamsUrl">https://test.stat.online.sberbank.ru/CDNORIGIN/greeting/packs_android_future.json</pair>
-      		    <pair id="packsParamsUrlV2">https://ift-stat.testonline.sberbank.ru:4463/SBERCMS/greeting/packs_android_test_4.json</pair> 
+      		    <pair id="packsParamsUrlV2">https://cdn.sberbank.ru/greeting/packs_android_new_34_beta.json</pair> 
                 <pair id="targetContentParamsUrl">https://ift-stat.testonline.sberbank.ru:4463/SBERCMS/greeting/target_animation_android_2.json</pair>
                 <pair id="greetingPromotePackEnabled">true</pair>
                 <pair id="greetingButtonTitle">Пролетая над Россией</pair>
@@ -18750,7 +18758,7 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
                 <pair id="packsPaymentEnabled">true</pair> 
                 <pair id="packsRedesignEnabled">true</pair>
 				<pair id="packsParamsUrl">https://test.stat.online.sberbank.ru/CDNORIGIN/greeting/packs_android_future.json</pair>
-                <pair id="packsParamsUrlV2">https://ift-stat.testonline.sberbank.ru:4463/SBERCMS/greeting/packs_android_test_4.json</pair>
+                <pair id="packsParamsUrlV2">https://cdn.sberbank.ru/greeting/packs_android_new_34_beta.json</pair>
                 <pair id="targetContentParamsUrl">https://ift-stat.testonline.sberbank.ru:4463/SBERCMS/greeting/target_animation_android_2.json</pair>
                 <pair id="greetingPackageSelectCorrectionsEnabled">true</pair>                
                 <pair id="greetingPromotePackEnabled">true</pair>
@@ -19067,7 +19075,7 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
         </map>
     </param>
     <param id="DPVConfig" description="Конфигурации фич DPV">
-        <pair id="DPVPrivileges">true</pair>
+        <pair id="DPVPrivileges">false</pair>
         <pair id="UseIncreaseLimit">true</pair>
         <pair id="VipPrivilegesScreenOffers">true</pair>
         <pair id="VipPrivilegesScreenPackBanner">true</pair>
