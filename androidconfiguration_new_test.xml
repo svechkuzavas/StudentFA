@@ -5009,7 +5009,7 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
         <pair id="NonClientsPreloginExtended">https://cms-res.testonline.sberbank.ru/nonclientsv2/prelogin.android.nonclient.ext.json</pair>
         <pair id="nonClientsPreloginV2Cards">https://ift-stat.testonline.sberbank.ru:4463/SBERCMS/nonclientsv2/prelogin.v2.android.nonclient.cards.json</pair>
         <pair id="nonClientsPreloginV2Faq">https://ift-stat.testonline.sberbank.ru:4463/SBERCMS/nonclientsv2/prelogin.v2.android.nonclient.faq.json</pair>
-        <pair id="nonClientsPreloginV2UfsURL">https://nginx-and-ift-g1.testonline.sberbank.ru</pair>
+        <pair id="nonClientsPreloginV2UfsURL">https://mobile-psi-guest1.testonline.sberbank.ru:8543</pair>
         <pair id="nonClientsPreloginV2UfsReserveURL">https://nginx-and-ift-gs.testonline.sberbank.ru</pair>
     </param>
     <param description="Параметр доступности функционала нативного заказа ДК неклиентом" id="nonClientsPreloginV2Enabled">
