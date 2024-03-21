@@ -5032,6 +5032,7 @@ s				<pair id="gibddSaveLicenseAndVRC">true</pair>
     <pair id="saluteVisionPassportEnabled">true</pair>
     <pair id="nearestOfficeEnabled">true</pair>
     <pair id="individualDesignEnabled">true</pair>
+    <pair id="deliveryV2Enabled">true</pair>
     <pair id="deliveryRussianPassport">true</pair>
     <pair id="deliveryForeignPassport">false</pair>
     <pair id="deliveryResidencePermit">false</pair>
